@@ -17,7 +17,7 @@ export default class Lampa {
         this.szuloElem.insertAdjacentHTML("beforeend",html);
     }
     esemenyKezelo(){
-        this.elem=document.querySelector(".elem:last-child")
+        this.elem=document.querySelector(".lampaElem:last-child")
         this.elem.addEventListener("click",(event)=>{
             console.log(this.#index)
             const e = new CustomEvent("kivalaszt",{detail:this.#index})
