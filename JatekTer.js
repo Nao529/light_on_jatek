@@ -4,8 +4,15 @@ export default class JatekTer {
     #lampaLista = ["-","-","-","-","-","-","-","-","-"]
     constructor(szuloElem){
         this.szuloElem=szuloElem;
+        this.gomb = document.getElementById("#reset-gomb");
         this.megjelenit();
         this.esemenyKezelo();
+        this.gombEsemenyKezelo();
+    }
+    gombEsemenyKezelo(){
+        this.gomb.addEventListener("click",()=>{
+            console.log("teszt");
+        })
     }
     esemenyKezelo(){
         window.addEventListener("kivalaszt",(event)=>{
