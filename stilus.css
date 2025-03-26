@@ -8,4 +8,10 @@
 }
 .lampaElem {
     border: 1px solid rgb(0, 145, 255);
+    overflow: hidden;
+}
+.lampaElem>* {
+    font-size: 140px;
+    text-align: center;
+    user-select: none;
 }

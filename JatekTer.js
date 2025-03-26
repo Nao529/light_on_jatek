@@ -1,7 +1,7 @@
 import Lampa from "./Lampa.js";
 
 export default class JatekTer {
-    #lampaLista = [" "," "," "," "," "," "," "," "," "]
+    #lampaLista = ["-","-","-","-","-","-","-","-","-"]
     constructor(szuloElem){
         this.szuloElem=szuloElem;
         this.megjelenit();
@@ -10,7 +10,11 @@ export default class JatekTer {
     esemenyKezelo(){
         window.addEventListener("kivalaszt",(event)=>{
             let index=event.detail;
-            this.#lampaLista[index]="*";
+            if(this.#lampaLista[index]!="+"){
+                this.#lampaLista[index]="+";
+            }else{
+                this.#lampaLista[index]="-";
+            }
             this.szuloElem.innerHTML="";
             this.megjelenit();
         })
