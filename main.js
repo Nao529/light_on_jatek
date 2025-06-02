@@ -1,10 +1,11 @@
-import Lampa from "./Lampa.js";
 import JatekTer from './JatekTer.js';
 import InfoPanel from "./InfoPanel.js";
 
-let JterElem = document.querySelector("#jatekter")
-const JATEKTER = new JatekTer(JterElem)
+const jatekterElem = document.querySelector("#jatekter");
+const infoPanel = new InfoPanel();
 
+const JATEKTER = new JatekTer(jatekterElem);
 
-let infoPanelGomb = document.getElementById("reset-gomb");
-let infoPanelSzamHely = document.getElementById("infopanel")
+JATEKTER.updateFelkapcsoltLampaCount = (count) => {
+    infoPanel.updateFelkapcsoltLampaCount(count);
+};

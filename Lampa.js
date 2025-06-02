@@ -1,27 +1,19 @@
 export default class Lampa {
-    #felkapcs
-    #index
-    constructor(felkapcs, index, szuloElem){
-        this.#felkapcs=felkapcs;
-        this.#index=index;
-        this.szuloElem=szuloElem;
-        console.log(szuloElem)
-        this.megjelenit();
-        this.esemenyKezelo();
+    constructor(felkapcs, index, szuloElem) {
+        this.felkapcs = felkapcs;
+        this.index = index;
+        this.divElem = document.createElement("div");
+        this.divElem.classList.add("lampaElem");
+
+        if (this.felkapcs === "+") {
+            this.divElem.classList.add("lighton");
+        } else {
+            this.divElem.classList.add("lightoff");
+        }
+        szuloElem.appendChild(this.divElem);
+        this.divElem.addEventListener("click", () => {
+            const esemeny = new CustomEvent("kivalaszt", { detail: this.index });
+            window.dispatchEvent(esemeny);
+        });
     }
-    megjelenit(){
-        let html = `<div class="lampaElem">
-                        <div>${this.#felkapcs}</div>
-                    </div>`;
-        this.szuloElem.insertAdjacentHTML("beforeend",html);
-    }
-    esemenyKezelo(){
-        this.lampaElem=document.querySelector(".lampaElem:last-child")
-        this.lampaElem.addEventListener("click",(event)=>{
-            console.log(this.#index)
-            const e = new CustomEvent("kivalaszt",{detail:this.#index})
-            window.dispatchEvent(e);
-        })
-    }
-    
 }

@@ -1,17 +1,75 @@
-#jatekter{
-    width: 500px;
-    height: 500px;
-    border: 1px solid red;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-}
-.lampaElem {
-    border: 1px solid rgb(0, 145, 255);
-    overflow: hidden;
-}
-.lampaElem>* {
-    font-size: 140px;
+body {
+    background-color: #003D4D;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
-    user-select: none;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#jatekter {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.lampaElem {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lampaElem.lighton {
+    background-color: #A1C6FF;
+    box-shadow: 0 0 20px 10px rgba(161, 198, 255, 0.5);
+}
+
+.lampaElem.lightoff {
+    background-color: #005B6E;
+}
+
+#infopanel {
+    margin-top: 10px;
+}
+
+#gyozelem-uzenet {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: lightgreen;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #0078D4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005A8C;
 }
